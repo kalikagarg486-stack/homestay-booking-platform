@@ -44,7 +44,7 @@ function Hero() {
           textShadow: "2px 2px 8px black",
         }}
       >
-        Luxury stays, breathtaking views, and unforgettable experiences.
+       Luxury stays, scenic views, and memorable travel experiences.
       </p>
 
       <button
