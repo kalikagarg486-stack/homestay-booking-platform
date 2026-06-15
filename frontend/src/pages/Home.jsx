@@ -228,7 +228,7 @@ function Home() {
           </div>
 
           <div>
-            <h2>25+</h2>
+            <h2>30+</h2>
             <p>Locations</p>
           </div>
 
