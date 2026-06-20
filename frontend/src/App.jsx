@@ -1,7 +1,7 @@
-import Home from "./pages/Home";
+import ComponentsDemo from "./pages/ComponentsDemo";
 
 function App() {
-  return <Home />;
+  return <ComponentsDemo />;
 }
 
 export default App;
