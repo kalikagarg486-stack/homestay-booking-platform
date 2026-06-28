@@ -1,4 +1,4 @@
-function Card({ title, image }) {
+function Card({ title, image, location, price, description }) {
   return (
     <div
       style={{
@@ -30,13 +30,17 @@ function Card({ title, image }) {
           {title}
         </h2>
 
+        <p><strong>📍 {location}</strong></p>
+
+        <p><strong>₹{price} / night</strong></p>
+
         <p
           style={{
             color: "#666",
             lineHeight: "1.6",
           }}
         >
-          Enjoy a peaceful stay with stunning views, modern amenities, and warm local hospitality.
+          {description}
         </p>
 
         <button

@@ -1,13 +1,17 @@
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-
-import mountain from "../assets/mountain.jpeg";
-import forests from "../assets/forests.jpeg";
-import lake from "../assets/lake.jpeg";
-
 function Home() {
+  const [homestays, setHomestays] = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:5000/api/homestays")
+    .then((res) => res.json())
+    .then((data) => setHomestays(data.data))
+    .catch((err) => console.error(err));
+}, []);
   return (
     <>
       <Navbar />
@@ -40,20 +44,16 @@ function Home() {
             flexWrap: "wrap",
           }}
         >
+          {homestays.map((home) => (
           <Card
-            title="Mountain View Homestay"
-            image={mountain}
+            key={home._id}
+            title={home.title}
+            image={home.image}
+            location={home.location}
+            price={home.price}
+            description={home.description}
           />
-
-          <Card
-            title="Forest Retreat"
-            image={forests}
-          />
-
-          <Card
-            title="Lakeside Paradise"
-            image={lake}
-          />
+        ))}
         </div>
       </section>
 
